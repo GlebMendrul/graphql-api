@@ -1,0 +1,6 @@
+type IdentityUk {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    postCode: String!
+}

@@ -1,0 +1,6 @@
+type IdentityUs {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    zip: String!
+}
