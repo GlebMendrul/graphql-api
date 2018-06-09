@@ -4,3 +4,7 @@ type IdentityUs {
     lastName: String!
     zip: String!
 }
+input RequestUs {
+    firstName: String!
+    zip: String!
+}

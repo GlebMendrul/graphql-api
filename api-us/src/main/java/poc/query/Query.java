@@ -3,6 +3,7 @@ package poc.query;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 import poc.model.IdentityUs;
+import poc.model.RequestUs;
 
 import java.util.List;
 
@@ -19,9 +20,10 @@ public class Query implements GraphQLQueryResolver {
     );
 
 
-    public List<IdentityUs> findIdentities(String firstName) {
+    public List<IdentityUs> findIdentities(RequestUs requestUs) {
         return IDENTITIES.stream()
-                .filter(identity -> identity.getFirstName().equals(firstName))
+                .filter(identity -> identity.getFirstName().equals(requestUs.getFirstName()))
+                .filter(identity -> identity.getZip().equals(requestUs.getZip()))
                 .collect(toList());
     }
 }

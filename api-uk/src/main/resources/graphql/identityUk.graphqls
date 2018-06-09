@@ -4,3 +4,7 @@ type IdentityUk {
     lastName: String!
     postCode: String!
 }
+input RequestUk {
+    firstName: String!
+    postCode: String!
+}
