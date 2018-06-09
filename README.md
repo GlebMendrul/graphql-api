@@ -3,17 +3,18 @@
 UK Request: 
 ``` 
 {
-  "query" : "query { findIdentities(firstName: \"William\" ){ firstName zip  } }"
+  "query" : "query { findIdentities( requestUk: { firstName: \"Luke\", postCode: \"123\" } ){ firstName lastName postCode } }"
 } 
 ```
 UK Reponse: 
 ```
 {
     "data": {
-        "findIdentitiesUs": [
+        "findIdentities": [
             {
-                "firstName": "William",
-                "zip": "456"
+                "firstName": "Luke",
+                "lastName": "Miller",
+                "postCode": "123"
             }
         ]
     }
@@ -22,8 +23,8 @@ UK Reponse:
 US Request: 
 ```
 {
-  "query" : "query { findIdentities(firstName: \"Luke\" ){ firstName postCode  } }"
-} 
+  "query" : "query { findIdentities( requestUs: { firstName: \"David\", zip: \"123\" } ){ firstName lastName zip } }"
+}  
 ```
 US Reponse:
 ```
@@ -31,8 +32,9 @@ US Reponse:
     "data": {
         "findIdentities": [
             {
-                "firstName": "Luke",
-                "postCode": "123"
+                "firstName": "David",
+                "lastName": "Robinson",
+                "zip": "123"
             }
         ]
     }
